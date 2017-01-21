@@ -1,0 +1,19 @@
+.currentlyPlaying {
+    color:red;
+    text-decoration:underline;
+}
+
+#controls {
+    width: 50%;
+    float: left;
+    margin-top: 1.5%;
+}
+
+#playlist {
+    width: 50%;
+    float: right;
+}
+
+dt {
+    cursor: pointer;
+}
