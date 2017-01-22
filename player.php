@@ -1,11 +1,9 @@
 <?php
-session_start();
-if (!$_SESSION['logged']) {
+if (!$_COOKIE['logging'] == 'logged') {
   header("Location: index.php");
   exit();
 }
-session_destroy();
-$dir = './Music';
+$dir = './music';
 $output = array_diff(scandir($dir), array('.', '..'));
 $toJson = json_encode($output);
 ?>
@@ -13,7 +11,7 @@ $toJson = json_encode($output);
 <html>
     <head>
         <title>Audio Player</title>
-        <link rel="stylesheet" type="text/css" href="player.css">
+        <link rel="stylesheet" type="text/css" href="css/player.css">
         <script>
             var songList = <?php echo $toJson; ?>;
             var dir = "<?php echo $dir; ?>";
@@ -36,17 +34,5 @@ $toJson = json_encode($output);
             </div>
             <div id="testValues"></div>
     </body>
-    <script src="player.js"></script>
+    <script src="js/player.js"></script>
 </html>
-
-<!--
- * TODO:
- * implémenter la lecture automatique DONE
- * implémenter laffichage de la playlist DONE
- * implémenter la possibilité dinterragir avec la playlist DONE
- * implémenter un style correct pour le lecteur EN COURS
- * implémenter une barre détat
- * implémenter le temps écoulé correctement
- * implémenter un gestionnaire de volume
- * implémenter des garde-fou pour le changement de chanson (précédent/suivant) pour ne pas avoir de undefined DONE
--->

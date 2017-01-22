@@ -16,8 +16,7 @@ $original_pwd_hash = '$2y$10$OcXmfQU.hqIQgtKbjSVJUeCEEsrMhRip2y/w0m4630FU00SzuUK
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
   $mdp_check = password_verify($_POST["pass"], $original_pwd_hash);
   if ($mdp_check == "true") {
-    session_start();
-    $_SESSION['logged'] = "true";
+    setcookie("logging", "logged", time()+15811200);
     header("Location: player.php");
     exit();
   }

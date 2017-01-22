@@ -50,7 +50,14 @@ function changeSong(e){
 
 function runningLoop(){
     var x = player.currentTime;
-    timer.innerHTML = Math.floor(x/60) + ":" + Math.round(x%60) +
+    var y;
+    if(x < 9){
+      var y = ":0";
+    }
+    else {
+      var y = ":"
+    }
+    timer.innerHTML = Math.floor(x/60) + y + Math.round(x%60) +
                       " / " + Math.floor(player.duration/60) + ":" + Math.round(player.duration%60);
     if(player.ended == true){
         changeSong(1);
