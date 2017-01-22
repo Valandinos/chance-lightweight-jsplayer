@@ -12,6 +12,9 @@ $toJson = json_encode($output);
     <head>
         <title>Audio Player</title>
         <link rel="stylesheet" type="text/css" href="css/player.css">
+        <link rel="stylesheet" type="text/css" href="css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="css/skeleton.css">
+        <link rel="icon" type="image/png" href="img/favicon.png">
         <script>
             var songList = <?php echo $toJson; ?>;
             var dir = "<?php echo $dir; ?>";
@@ -19,12 +22,12 @@ $toJson = json_encode($output);
     </head>
     <body onload="load();showPlaylist();">
         <div id="controls">
-            <input type="button" onclick="play();" value="Lecture">
-            <input type="button" onclick="pause();" value="Pause">
-            <input type="button" onclick="stop();" value="Stop">
-            <input type="button" onclick="changeSong(0);" value="Précédente">
-            <input type="button" onclick="changeSong(1);" value="Suivante">
-            <input type="button" onclick="showPlaylist();" value="Playlist">
+            <input type="button" onclick="play();" value="Lecture" class="button-primary">
+            <input type="button" onclick="pause();" value="Pause" class="button-primary">
+            <input type="button" onclick="stop();" value="Stop" class="button-primary">
+            <input type="button" onclick="changeSong(0);" value="Précédente" class="button-primary">
+            <input type="button" onclick="changeSong(1);" value="Suivante" class="button-primary">
+            <input type="button" onclick="showPlaylist();" value="Playlist" class="button-primary">
             <p id="timer"></p>
         </div>
             <audio id="player">

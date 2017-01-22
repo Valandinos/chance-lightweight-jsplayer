@@ -1,7 +1,7 @@
 # chance-lightweight-jsplayer
 Small javascript responsive audio player created specifically for my own need.
 
-###TODO
+### TODO
  * implémenter la lecture automatique DONE
  * implémenter laffichage de la playlist DONE
  * implémenter la possibilité dinterragir avec la playlist DONE
