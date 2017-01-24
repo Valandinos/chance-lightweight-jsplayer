@@ -30,12 +30,14 @@ $toJson = json_encode($output);
             <input type="button" onclick="showPlaylist();" value="Playlist" class="button-primary">
             <p id="timer"></p>
         </div>
-            <audio id="player">
-                <source src="" type="audio/ogg" id="source">
-            </audio>
-            <div id="playlist">
-            </div>
-            <div id="testValues"></div>
+        <audio id="player">
+            <source src="" type="audio/ogg" id="source">
+        </audio>
+        <div id="playlist">
+        </div>
+        <div id="testValues">
+            <progress max="100" value="" id="progressBar">;
+        </div>
     </body>
     <script src="js/player.js"></script>
 </html>

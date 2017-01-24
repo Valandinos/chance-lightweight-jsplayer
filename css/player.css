@@ -17,3 +17,6 @@
 dt {
     cursor: pointer;
 }
+#testValues {
+    display: block;
+}

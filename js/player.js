@@ -29,11 +29,12 @@ function stop(){
     window.clearInterval(playLoop);
     timer.innerHTML = "";
     removeCurrentSong();
+    actualSong = 2;
 }
 
 function changeSong(e){
     removeCurrentSong();
-    if(e == "1" && actualSong < Object.keys(songList).length + 1){
+    if(e == "1" && actualSong <= Object.keys(songList).length){
         actualSong++;
         load();
         play();
@@ -49,16 +50,16 @@ function changeSong(e){
 }
 
 function runningLoop(){
-    var x = player.currentTime;
+    var duration = " / " + Math.floor(player.duration/60) + ":" + Math.round(player.duration%60);
+    var x = Math.round(player.currentTime%60);
     var y;
-    if(x < 9){
+    if(x <= 9){
       var y = ":0";
     }
     else {
       var y = ":"
     }
-    timer.innerHTML = Math.floor(x/60) + y + Math.round(x%60) +
-                      " / " + Math.floor(player.duration/60) + ":" + Math.round(player.duration%60);
+    timer.innerHTML = Math.floor(player.currentTime/60) + y + x + duration;
     if(player.ended == true){
         changeSong(1);
     };
@@ -88,4 +89,10 @@ function switchCurrentSong(x){
     actualSong = current;
     load();
     play();
+}
+
+function calculateTimePassed(){
+    var currentTime = player.currentTime;
+    var totalTime = player.duration;
+    var percentage = (currentTime/totalTime)
 }
