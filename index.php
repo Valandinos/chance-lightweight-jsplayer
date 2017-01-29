@@ -12,7 +12,7 @@
   </body>
 </html>
 <?php
-$original_pwd_hash = '$2y$10$OcXmfQU.hqIQgtKbjSVJUeCEEsrMhRip2y/w0m4630FU00SzuUKJW';
+$original_pwd_hash = '$2y$10$7P0HYQI2pNEoU3pmK0hpCuUQosVtFkSNx3i4iAgNk3RZv7I23thxy';
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
   $mdp_check = password_verify($_POST["pass"], $original_pwd_hash);
   if ($mdp_check == "true") {
