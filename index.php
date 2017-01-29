@@ -12,7 +12,7 @@
   </body>
 </html>
 <?php
-$original_pwd_hash = '$2y$10$OcXmfQU.hqIQgtKbjSVJUeCEEsrMhRip2y/w0m4630FU00SzuUKJW'; //utilisation de la fonction password_hash() avec le mdp "toshiba1252"
+$original_pwd_hash = '$2y$10$OcXmfQU.hqIQgtKbjSVJUeCEEsrMhRip2y/w0m4630FU00SzuUKJW';
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
   $mdp_check = password_verify($_POST["pass"], $original_pwd_hash);
   if ($mdp_check == "true") {
